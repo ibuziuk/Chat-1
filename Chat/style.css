@@ -1,0 +1,41 @@
+.actions{
+	margin-top: 10px;
+}
+
+#content{
+	margin-left: 150px;
+	margin-right: 25px;
+	margin-top: 15px;
+	width: 1040px;
+}
+
+#registration{
+	width: 250px;
+}
+
+.scrollBar{
+	overflow: auto;
+	height: 165px;
+	width: 250px
+}
+
+.borderedDiv{
+	border: 3px solid gray;
+	height: 475px;
+}
+
+#topContent{
+	margin-bottom: 20px;
+	margin-right: 0px;
+}
+
+.messageScroll{
+	overflow: auto;
+	height: 475px;
+}
+
+.messageScroll{
+	overflow: auto;
+	height: 475px;
+}
+	
