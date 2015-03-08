@@ -5,28 +5,33 @@
 		<meta charset='utf-8'> 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	<body>
 		<div id="content"	>
 			<div class="row" id="topContent">
 		  	<div class="col-md-4">
-		  		<div class="panel panel-default" id="registration">
+		  		<div class="panel panel-default" id="registration" >
   					<div class="panel-heading">
     					<h3 class="panel-title">Вход</h3>
   					</div>
   					<div class="panel-body">
-    					<form>
+    					<form action="#">
   							<div class="form-group">
     							<label for="userLogin">Логин</label>
     							<input type="text" class="form-control" id="userLogin" placeholder="Логин">
   							</div>
-  							<button type="submit" class="btn btn-default">Войти</button>
-							</form>
+  							<button  type="submit" id="submitUser" class="btn btn-default btn-registration">Войти</button>
+						</form>
   					</div>
 				</div>
 				<div class="currentUser">
-					<h4 >Имя пользователя</h4>
-					<button class="btn btn-primary btn-xs" type="submit" style="float: center">Изменить имя</button>
+				    <h4 class="currentName">Имя пользователя</h4>
+				    <input type="text" class="form-control" id="changeName" disabled="true">
+					<button class="btn btn-primary btn-xs" id="changeCurrentName" type="submit" style="float: center">Изменить имя</button>
+					<button class="btn btn-primary btn-xs" id="saveCurrentName" type="submit">Изменить имя</button>
 				</div>
 				<h3>Пользователи online</h3>
 				<div class="well scrollBar">
@@ -40,87 +45,31 @@
 					</ul>
 				</div>
 		  	</div>
-		  	<div class="col-md-8 borderedDiv messageScroll show">
-			    <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
-			     <p>
-			    Ник: сообщение
-			    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    </p>
+		  	<div class="col-md-8 borderedDiv messageScroll show" id="showMessage">
+			   <div class="exampleMessage">
+				   	 <p> 
+					    <span class="nick">Ник:</span>
+					    <span class="message">сообщение</span>
+
+					    <span style = "float: right"><a href="#" class="editMessage"><i class="fa fa-pencil-square-o"></i></a></span>
+					    <span style = "float: right"><a href="#" class="saveMessage" style="display: none"><i class="fa fa-pencil-square-o"></i></a></span>
+					    <input type="text" class="form-control" id="changeMessage" disabled="true">
+					    <button class="btn btn-primary btn-xs" id="saveMessage" type="submit">Сохранить</button>
+
+				    	<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+
+				    </p>
+				    
+			   </div>
 		  	</div>
 			</div>
 			<div class="well" >
-				<form method="post">
-					<textarea class="form-control" rows="2" placeholder="Введите Ваше сообщение"></textarea>
+				<form  action="#">
+					<textarea id="messageArea" class="form-control" rows="2" placeholder="Введите Ваше сообщение" disabled="true"></textarea>
 					<div class="actions">
-						<button class="btn btn-primary" type="submit">Отправить</button>
-						<button class="btn btn-primary" type="submit" style="float: right">Редактирование сообщений</button>
+						<button id="send" class="btn btn-primary" type="submit" disabled="true">Отправить</button>
+						<button class="btn btn-primary" type="submit" style="float: right">Оффлайн</button>
+						<button class="btn btn-primary" type="submit" style="float: right">Онлайн</button>
 					</div>
 				</form>
 			</div>

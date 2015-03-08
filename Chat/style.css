@@ -47,3 +47,32 @@
 	border-radius: 5px 5px 5px 5px;
 	text-align: center;
 }
+
+#saveCurrentName{
+	display: none;
+	float: center;
+}
+
+ #changeName{
+	display: none;
+}
+
+.nick{
+	color: lightblue;
+}
+
+.exampleMessage{
+	display: none;
+}
+
+#editMessage{
+	display: none;
+}
+
+#saveMessage{
+	display: none;
+}
+
+#changeMessage{
+	display: none;
+}
