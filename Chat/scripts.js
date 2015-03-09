@@ -12,6 +12,13 @@ $(document).ready(function () {
             $('#userLogin').val('');
             $('#messageArea').attr('disabled', false);
             $('#send').attr('disabled', false);
+
+            debugger;
+
+            li = $('#onlineArea li').first().clone();
+            li.html($userName.html());
+            $('#onlineArea').append(li);
+
         };
     })
 
@@ -55,7 +62,6 @@ $(document).ready(function () {
             $('#showMessage').append(messageDiv);
             $('#messageArea').val('');
         };
-
     })
 
     //edit message
@@ -71,6 +77,7 @@ $(document).ready(function () {
         $input.show();
         $(this).hide();
         $p.find('#saveMessage').show();
+
     })
 
     //save edit message
@@ -87,13 +94,6 @@ $(document).ready(function () {
         $p.find('a.editMessage').show();
     })
 
-    //автоматический логин и генерация соообщений
-    $('#userLogin').val('TEST NIC')
-    $('#submitUser').click()
-    for(var i = 0 ; i < 20; ++i){
-       $('#messageArea').val('TEST MESSAGE ' + i)
-        $('#send').click()    
-    }
 })
 
 
