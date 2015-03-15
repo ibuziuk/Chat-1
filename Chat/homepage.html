@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	<body>
-		<div id="content"	>
+		<div id="content">
 			<div class="row" id="topContent">
 		  	<div class="col-md-4">
 		  		<div class="panel panel-default" id="registration" >
@@ -36,25 +36,25 @@
 				<h3>Пользователи online</h3>
 				<div class="well scrollBar">
 					<ul id="onlineArea">
-						<li id="onlineUser">Петя</li>
+						<li id="onlineUser" style="display:none" >Петя</li>
 					</ul>
 				</div>
 		  	</div>
 		  	<div class="col-md-8 borderedDiv messageScroll show" id="showMessage">
-			   <div class="exampleMessage">
-				   	 <p> 
-					    <span class="nick">Ник:</span>
+			   <div class="exampleMessage" message-id="" status="">
+				   	<p> 
+				   	
+						<span class="nick">Ник:</span>
 					    <span class="message">сообщение</span>
-
+					   
 					    <span style = "float: right"><a href="#" class="editMessage"><i class="fa fa-pencil-square-o"></i></a></span>
-					    <span style = "float: right"><a href="#" class="saveMessage" style="display: none"><i class="fa fa-pencil-square-o"></i></a></span>
-					    <input type="text" class="form-control" id="changeMessage" disabled="true">
+						<span style = "float: right"><a href="#" class="saveMessage" style="display: none"><i class="fa fa-pencil-square-o"></i></a></span>
+				        <input type="text" class="form-control" id="changeMessage" disabled="true">
 					    <button class="btn btn-primary btn-xs" id="saveMessage" type="submit">Сохранить</button>
 
-				    	<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
-
+					    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
 				    </p>
-				    
+
 			   </div>
 		  	</div>
 			</div>
