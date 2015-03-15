@@ -30,7 +30,8 @@
 }
 
 .messageScroll{
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto; 
 	height: 475px;
 }
 
