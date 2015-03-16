@@ -134,7 +134,7 @@ $(document).ready(function () {
         if($userName.html() + ":" != $(this).closest('.exampleMessage').find('.nick').html()){
             return;
         }
-
+        
         id = $(this).closest('.exampleMessage').attr('message-id');
         
         $(this).parent().parent().remove();
