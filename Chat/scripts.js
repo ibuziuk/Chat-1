@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     var allMessages = restoreMessages() || [];
     createAllTasks(allMessages);
-    $userName.html(restoreName());
+    $userName.html(restoreName() || "Имя пользователя");
 
     if($userName.html()!=""){
         debugger;
@@ -129,9 +129,14 @@ $(document).ready(function () {
         };
     })
 
-    //delete message
+    //delete message (only my msg)
     $('#showMessage').on('click', 'button.close', function () {
+        if($userName.html() + ":" != $(this).closest('.exampleMessage').find('.nick').html()){
+            return;
+        }
+
         id = $(this).closest('.exampleMessage').attr('message-id');
+        
         $(this).parent().parent().remove();
 
         for(var i = 0; i < messageList.length; i++) {
@@ -144,7 +149,6 @@ $(document).ready(function () {
             return;
         }
     })
-
 
     //send message
     $('#send').click(function () {
@@ -163,8 +167,12 @@ $(document).ready(function () {
         store(messageList);
     })
 
-    //edit message
+    //edit message (only my msg)
     $('#showMessage').on('click', 'a.editMessage', function () {
+        if($userName.html() + ":" != $(this).closest('.exampleMessage').find('.nick').html()){
+            return;
+        }
+
         $p = $(this).closest('.exampleMessage')
         $message = $p.find('.message')
         $input = $p.find('#changeMessage')
@@ -201,8 +209,6 @@ $(document).ready(function () {
             return;
         }
     })
-
-    
 })
 
 
