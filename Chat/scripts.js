@@ -12,7 +12,7 @@ var theMessage = function(text, name , done) {
     return {
         nick: name,
         message: text,
-        status: !!done,
+        status: done,
         id: uniqueId()
     };
 };
@@ -79,7 +79,6 @@ $(document).ready(function () {
     $userName.html(restoreName() || "Имя пользователя");
 
     if($userName.html()!=""){
-        debugger;
         li = $('#onlineArea li').first().clone();
         li.html($userName.html());
         $('#onlineArea').append(li.show());
@@ -94,7 +93,6 @@ $(document).ready(function () {
             $('#userLogin').val('');
             $('#messageArea').attr('disabled', false);
             $('#send').attr('disabled', false);
-            debugger;
             li = $('#onlineArea li').first().clone();
             li.html($userName.html());
             $('#onlineArea').append(li.show());
@@ -134,7 +132,7 @@ $(document).ready(function () {
         if($userName.html() + ":" != $(this).closest('.exampleMessage').find('.nick').html()){
             return;
         }
-        
+
         id = $(this).closest('.exampleMessage').attr('message-id');
         
         $(this).parent().parent().remove();
@@ -210,6 +208,3 @@ $(document).ready(function () {
         }
     })
 })
-
-
-

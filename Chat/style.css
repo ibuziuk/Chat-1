@@ -77,3 +77,8 @@
 #changeMessage{
 	display: none;
 }
+
+.message{
+	width: 500px;
+	border-color: green;
+}
