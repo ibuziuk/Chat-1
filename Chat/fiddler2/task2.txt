@@ -1,0 +1,15 @@
+GET http://localhost:999/chat?token=TN51EN HTTP/1.1
+User-Agent: Composer
+Host: localhost:999
+Content-Length: 8
+
+
+
+
+
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Mar 2015 21:31:56 GMT
+Content-length: 40
+
+{"messages":["me too"],"token":"TN19EN"}
